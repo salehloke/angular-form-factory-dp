@@ -10,7 +10,7 @@ import {
 
 @Injectable()
 export class IPAddressFormDataProvider {
-  constructor(private httpClient: HttpClient) {}
+  constructor() {}
 
   // searchCountry = (termChanged: Observable<string>): Observable<string[]> =>
   //   termChanged.pipe(

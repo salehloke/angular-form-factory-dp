@@ -8,6 +8,7 @@ export class IPAddressFormFactory {
 
   create(): IPAddressForm {
     const formGroup = this.createFormGroup();
+    console.log('create', formGroup);
     return new IPAddressForm(formGroup);
   }
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { IPAddressForm } from './providers/ip-address-form';
 import { IPAddressFormDataProvider } from './providers/ip-address-form-data-provider';
@@ -10,12 +10,14 @@ import { IPAddressFormFactory } from './providers/ip-address-form-factory';
   templateUrl: './ip-address-form.component.html',
   styleUrls: ['./ip-address-form.component.css'],
   providers: [
+    FormBuilder,
     IPAddressFormFactory,
     {
       provide: IPAddressForm,
       useFactory: (factory: IPAddressFormFactory) => factory.create(),
       deps: [IPAddressFormFactory],
     },
+    IPAddressFormDataProvider,
     IPAddressFormFactory,
   ],
 })
@@ -27,7 +29,7 @@ export class IpAddressFormComponent implements OnInit {
     public formDataProvider: IPAddressFormDataProvider,
     public formActions: IPAddressFormDataProvider
   ) {
-    this.formIsValid = this.mainForm.isValid();
+    console.log(this.mainForm);
   }
 
   ngOnInit() {}
