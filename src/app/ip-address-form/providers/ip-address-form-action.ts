@@ -7,17 +7,5 @@ import { IPAddressForm } from './ip-address-form';
 export class IPAddressFormAction {
   searchButtonClicked = new Subject<void>();
 
-  constructor(
-    private form: IPAddressForm,
-    private urlStore: UrlStore<PersonSearchCriteria>
-  ) {
-    this.handleSearchButtonClick();
-  }
-
-  private handleSearchButtonClick() {
-    const searchAction = this.searchButtonClicked.pipe(
-      map(() => this.form.asFormGroup.value)
-    );
-    this.urlStore.setSource(searchAction);
-  }
+  constructor(private form: IPAddressForm) {}
 }

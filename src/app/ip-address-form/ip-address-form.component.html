@@ -1,1 +1,13 @@
 <h1>test</h1>
+
+<form [formGroup]="mainForm.asFormGroup">
+  <div class="form-group">
+    <label for="isRange">isRange</label>
+    <input
+      id="isRange"
+      type="checkbox"
+      formControlName="isRange"
+      class="form-control"
+    />
+  </div>
+</form>
