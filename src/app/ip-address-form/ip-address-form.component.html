@@ -2,10 +2,12 @@
   <div class="form-group">
     <label for="isRange">isRange</label>
     <input
+      (change)="test()"
       id="isRange"
       type="checkbox"
       formControlName="isRange"
       class="form-control"
     />
+    <!-- <button (click)="(formActions.click)">test</button> -->
   </div>
 </form>

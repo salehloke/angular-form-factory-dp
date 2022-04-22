@@ -7,5 +7,11 @@ import { IPAddressForm } from './ip-address-form';
 export class IPAddressFormAction {
   searchButtonClicked = new Subject<void>();
 
-  constructor(private form: IPAddressForm) {}
+  constructor(private form: IPAddressForm) {
+    this.click();
+  }
+
+  click() {
+    console.log('button click:', this.form.isValid());
+  }
 }
