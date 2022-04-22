@@ -2,12 +2,15 @@
   <div class="form-group">
     <label for="isRange">isRange</label>
     <input
-      (change)="test()"
+      name="isRange"
       id="isRange"
-      type="checkbox"
+      type="radio"
       formControlName="isRange"
       class="form-control"
     />
-    <!-- <button (click)="(formActions.click)">test</button> -->
   </div>
+  <div class="form-group">
+    <ip-range-input></ip-range-input>
+  </div>
+  <button (click)="formActions.click()">Validate</button>
 </form>

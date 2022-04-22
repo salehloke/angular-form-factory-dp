@@ -7,7 +7,7 @@ import { IPAddressFormDataProvider } from './providers/ip-address-form-data-prov
 import { IPAddressFormFactory } from './providers/ip-address-form-factory';
 
 @Component({
-  selector: 'ip-address-form',
+  selector: 'app-ip-address-form',
   templateUrl: './ip-address-form.component.html',
   styleUrls: ['./ip-address-form.component.css'],
   providers: [
@@ -20,6 +20,7 @@ import { IPAddressFormFactory } from './providers/ip-address-form-factory';
     },
     IPAddressFormDataProvider,
     IPAddressFormFactory,
+    IPAddressFormAction,
   ],
 })
 export class IpAddressFormComponent implements OnInit {
@@ -31,7 +32,6 @@ export class IpAddressFormComponent implements OnInit {
     public formDataProvider: IPAddressFormDataProvider
   ) {
     this.mainForm.isValid();
-    console.log(this.mainForm);
   }
 
   ngOnInit() {}

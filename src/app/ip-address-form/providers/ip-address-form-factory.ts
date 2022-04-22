@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { IPAddressForm } from './ip-address-form';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class IPAddressFormFactory {
 
   private createFormGroup() {
     return this.formBuilder.group({
-      ipAddressStart: [''],
+      ipAddressStart: ['', Validators.required],
       ipAddressEnd: [''],
       isRange: [''],
     });
